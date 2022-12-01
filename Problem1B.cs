@@ -1,6 +1,6 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace AdventOfCode2022
 {
@@ -8,25 +8,33 @@ namespace AdventOfCode2022
     {
         public void Run()
         {
-            var calories = new List<int>();
+            int[] calories = { 0, 0, 0 };
+            var lowestCalories = 0;
             var currentCalories = 0;
-            var lines = File.ReadLines("../../Input1A.txt");
 
-            foreach (var line in lines)
+            foreach (var line in File.ReadLines("../../Input1A.txt"))
             {
-                if (line.Length == 0)
-                {
-                    calories.Add(currentCalories);
-                    currentCalories = 0;
-                }
-                else
+                if (line.Length != 0)
                 {
                     currentCalories += int.Parse(line);
+                    continue;
                 }
+
+                if (currentCalories > lowestCalories)
+                {
+                    for (var i = 0; i < 3; i++)
+                    {
+                        if (calories[i] != lowestCalories) continue;
+                        calories[i] = currentCalories;
+                        lowestCalories = calories.Min();
+                        break;
+                    }
+                }
+
+                currentCalories = 0;
             }
-            
-            calories.Sort();
-            Console.WriteLine(calories[calories.Count -1] + calories[calories.Count -2] + calories[calories.Count -3]);
+
+            Console.WriteLine(calories.Sum());
         }
     }
 }

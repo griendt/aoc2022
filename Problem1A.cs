@@ -9,19 +9,17 @@ namespace AdventOfCode2022
         {
             var maxCalories = 0;
             var currentCalories = 0;
-            var lines = File.ReadLines("../../Input1A.txt");
             
-            foreach (var line in lines)
+            foreach (var line in File.ReadLines("../../Input1A.txt"))
             {
-                if (line.Length == 0)
-                {
-                    maxCalories = Math.Max(maxCalories, currentCalories);
-                    currentCalories = 0;
-                }
-                else
+                if (line.Length != 0)
                 {
                     currentCalories += int.Parse(line);
+                    continue;
                 }
+                
+                maxCalories = Math.Max(maxCalories, currentCalories);
+                currentCalories = 0;
             }
             
             Console.WriteLine(maxCalories);

@@ -10,7 +10,7 @@ namespace AdventOfCode2022
             var maxCalories = 0;
             var currentCalories = 0;
             
-            foreach (var line in File.ReadLines("../../Input1A.txt"))
+            foreach (var line in File.ReadLines("../../Input1.txt"))
             {
                 if (line.Length != 0)
                 {

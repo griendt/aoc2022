@@ -47,12 +47,15 @@
         <Compile Include="Problem2B.cs" />
         <Compile Include="Problem3A.cs" />
         <Compile Include="Problem3B.cs" />
+        <Compile Include="Problem4A.cs" />
+        <Compile Include="Problem4B.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
       <Content Include="Input1.txt" />
       <Content Include="Input2.txt" />
       <Content Include="Input3.txt" />
+      <Content Include="Input4.txt" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

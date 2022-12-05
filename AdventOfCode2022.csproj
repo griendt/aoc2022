@@ -24,13 +24,14 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
+        <PlatformTarget>x64</PlatformTarget>
         <DebugType>pdbonly</DebugType>
         <Optimize>true</Optimize>
         <OutputPath>bin\Release\</OutputPath>
         <DefineConstants>TRACE</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
+        <Prefer32bit>false</Prefer32bit>
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="System" />
@@ -39,6 +40,7 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Dummy.cs" />
         <Compile Include="EntryPoint.cs" />
         <Compile Include="IProblem.cs" />
         <Compile Include="Problem1A.cs" />
@@ -49,6 +51,8 @@
         <Compile Include="Problem3B.cs" />
         <Compile Include="Problem4A.cs" />
         <Compile Include="Problem4B.cs" />
+        <Compile Include="Problem5A.cs" />
+        <Compile Include="Problem5B.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
@@ -56,6 +60,7 @@
       <Content Include="Input2.txt" />
       <Content Include="Input3.txt" />
       <Content Include="Input4.txt" />
+      <Content Include="Input5.txt" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
